@@ -168,7 +168,7 @@ def index():
 
     
     <div class="input-container">
-        <input type="text" class="text-input" id="prompt-input" placeholder="Enter your meme prompt..." autocomplete="off">
+        <input type="text" class="text-input" id="prompt-input" placeholder="Enter your meme text..." autocomplete="off">
         <button id="send-btn" class="send-btn">➤</button>
     </div>
 
@@ -265,7 +265,7 @@ def generate_meme():
     # Format the prompt for meme generation
     formatted_prompt = f"""Create a meme image with the following joke/text: "{user_prompt}"
 
-Generate an image that visually represents or relates to this joke/meme. The image should be suitable for a meme format and include the exact text "{user_prompt}" displayed prominently on the image in a clear, readable meme-style font. The image should be funny, relatable, and capture the essence of the joke. Use appropriate visual elements, characters, or scenarios that complement the humor of the text."""
+Generate an image that visually represents the text entered by the user exactly as spelled, including every word, and with no duplication. The image should be suitable for a meme format and include the exact text "{user_prompt}" displayed prominently on the image in a clear, readable meme-style font. The image should be funny, relatable, and capture the essence of the joke. Use appropriate visual elements, characters, or scenarios that complement the humor of the text."""
     
     try:
         response = requests.post(VENICE_ENDPOINT, headers={
